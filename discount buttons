@@ -1,11 +1,65 @@
 <body>
+    <h1>Apply discount</h1>
 <button>10%</button>
-<button>20%></button>
+<button>20%</button>
 <button>25%</button>
 <button>50%</button>
-<h1>price cut off</h1>
-<input type="text">
-<p>prices discount</p>
+    <div style="padding-top: 20px;">
+    
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<ul id="myUL">
+  <li><a href="#">tshirt<button onclick="openImage1()">Open image tshirt</button><div><span>50%</span></div></a></li>
+  <li><a href="#">cap<button onclick="openImage2()">Open image cap</button><div><span>20%</span></div></a></li>
+
+  <li><a href="#">football shoes<button onclick="openImage3()">open image shoes</button></a></li>
+</ul>
+    </div>
 </body>
-</script>
+<style>
+#myInput {
+  width: 100%;
+  font-size: 16px; 
+  padding: 10px 5px 10px;
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+
+  margin-top: -1px; 
+  background-color: skyblue; 
+  padding: 15px; 
+  text-decoration: none;
+  font-size: 12px
+  color: white; 
+  display: block;
+}
+</style>
+<script>
+function myFunction() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+    
+    function openImage1() {
+        var x = document.getElementById("Downloads/white-tee.jpg");
+    }
 </script>
